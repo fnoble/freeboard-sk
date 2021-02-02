@@ -3,7 +3,7 @@
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 import { Component, Host, Input, forwardRef, ContentChild } from '@angular/core';
-import { VectorTile } from 'ol';
+import { VectorTile } from 'ol/source';
 import { LayerVectorTileComponent } from '../layers/layervectortile.component';
 import { FormatComponent } from '../formats/format.component';
 import { TileGridComponent } from '../tilegrid.component';
