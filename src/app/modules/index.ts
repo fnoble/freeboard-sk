@@ -8,5 +8,6 @@ export * from './map/map.module'
 export * from './utils/utils.module'
 export * from './experiments/experiments.module'
 export * from './course/course.module'
+export * from './enc/enc.module'
 
 export * from './skstream/skstream.module'

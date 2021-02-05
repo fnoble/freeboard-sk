@@ -97,7 +97,8 @@
             </aol-source-osm>
         </aol-layer-tile>
 
-        <aol-layer-tile *ngIf="c[0]!='openstreetmap' && c[2]" [ngSwitch]="c[1].type"
+        <aol-layer-tile *ngIf="c[0]!='openstreetmap' && c[1].chartFormat=='png' && c[2]"
+                [ngSwitch]="c[1].type"
                 [zIndex]="10 + i" 
                 preload="0">
             <aol-source-xyz *ngSwitchCase="'tilelayer'"
@@ -114,7 +115,28 @@
             ></aol-source-tilewms>
         </aol-layer-tile>
 
+        <aol-layer-vectortile *ngIf="c[0]!='openstreetmap' && c[1].chartFormat=='pbf' && c[2]"
+                [zIndex]="10 + i" 
+                [style]="encStyleFunction"
+                preload="0">
+            <aol-source-vectortile
+                    (tileLoadStart)="onMapTileEvent($event)"
+                    (tileLoadEnd)="onMapTileEvent($event)"
+                    (tileLoadError)="onMapTileEvent($event)"
+                    [url]="c[1].tilemapUrl">                           
+                <aol-format-mvt
+                ></aol-format-mvt>
+                <aol-tilegrid
+                    [minZoom]="c[1].minzoom"
+                    [maxZoom]="c[1].maxzoom"
+                >
+                </aol-tilegrid>
+          </aol-source-vectortile>
+        </aol-layer-vectortile>
+
+
     </div>
+
     <!-- *** /Charts *** -->
 
     <!-- *** AtoNs *** -->

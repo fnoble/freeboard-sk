@@ -90,7 +90,7 @@ const FreeboardConfig= {
 export class AppInfo extends Info {
 
     private DEV_SERVER= {
-        host: '172.17.0.1',  //'192.168.86.32', //'172.17.0.1', // host name || ip address
+        host: 'skylarkpi.local',  //'192.168.86.32', //'172.17.0.1', // host name || ip address
         port: 3000,     // port number
         ssl: false
     };

@@ -4,7 +4,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
 //import { proj, coordinate, style, Collection } from 'openlayers';
 import { createStringXY } from 'ol/coordinate';
 import { transform, transformExtent, getPointResolution, fromLonLat } from 'ol/proj';
-import { Style, Stroke } from 'ol/style';
+import { Style, Stroke, Fill, Icon } from 'ol/style';
 import { Collection } from 'ol';
 
 import { Convert } from 'src/app/lib/convert';
@@ -15,6 +15,8 @@ import { AppInfo } from 'src/app/app.info'
 import { SKResources } from '../skresources/resources.service';
 import { SKChart, SKVessel } from '../skresources/resource-classes';
 import { SKStreamFacade } from '../skstream/skstream.facade';
+
+import { s52LookupStyle } from '../enc/s52instruction';
 
 interface IResource {
     id: string;
@@ -94,6 +96,10 @@ export class FBMapComponent implements OnInit, OnDestroy {
     // ** adjust radius to render the correct radius on ground at given position.
     mapifyRadius(radius: number, position: [number,number]) {
         return radius / getPointResolution('EPSG:3857', 1, fromLonLat(position));
+    }
+
+    encStyleFunction(feature, resolution) {
+      return s52LookupStyle(feature);
     }
 
     // ** draw interaction data 
