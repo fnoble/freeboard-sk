@@ -2,12 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": [],
-    "paths": {
-      "ngx-openlayers": [
-        "src/ext-lib/ngx-openlayers"
-      ]
-    }
+    "types": []
   },
   "include": [
     "src/**/*.ts"
