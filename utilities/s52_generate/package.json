@@ -1,0 +1,13 @@
+{
+  "name": "s52_generate",
+  "version": "1.0.0",
+  "description": "Utility script to generate S52 data for Freeboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "pixl-xml": "^1.0.13",
+    "sharp": "^0.27.1"
+  }
+}
