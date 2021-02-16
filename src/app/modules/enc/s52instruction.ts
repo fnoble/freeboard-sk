@@ -80,7 +80,7 @@ function s52ApplyInstructionsToStyle(s, instr: string[], feature) {
                     anchorYUnits: 'pixels',
                     anchor: [parseInt(sym.pivot._x), parseInt(sym.pivot._y)], // TODO: Anchor and align image properly to pivot point
                     opacity: 1,
-                    src: '../assets/img/enc/' + symName + '.png'
+                    src: '../assets/img/enc/day/' + symName + '.png'
                 }));
                 break;
             case 'TX': // SHOWTEXT (Textual Label)
