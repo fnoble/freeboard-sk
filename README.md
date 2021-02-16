@@ -184,3 +184,21 @@ To build the NPM package use `npm pack` command which will:
 
 Built `*.tgz` file is placed in the `/` root folder.
 
+---
+
+### Electronic Navigation Charts (ENC) - WIP
+
+NOTE: This is an experimental work-in-progress feature. This README should be updated when the feature is complete. For now these instructions should help you try it out.
+
+#### Preparing ENC charts
+
+ENC charts in S57 format must be converted to MBTiles format so they can be served by `charts-plugin`. Unlike the regular *raster* MBTiles, these tiles contain vector data in Mapbox Vector Tile (MVT) format.
+
+Conversion can be accomplished by the `ogr2ogr` tool from GDAL:
+
+```
+$ ogr2ogr -f MBTILES US5CA13M.mbtiles ENC_ROOT/US5CA13M/US5CA13M.000 -dsco MAXZOOM=18
+```
+
+The output `.mbtiles` file can be served by the standard `charts-plugin`.
+
